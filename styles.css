@@ -2,19 +2,27 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: linear-gradient(135deg, #b9e5e3, #f0c9c2);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 500px;
     text-align: center;
@@ -23,6 +31,8 @@ body {
 h1 {
     margin-bottom: 20px;
     color: #333;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 form {
@@ -33,7 +43,7 @@ form {
 label {
     margin-bottom: 5px;
     font-size: 1.1em;
-    color: #555;
+    color: #333;
 }
 
 input, textarea {
@@ -42,16 +52,22 @@ input, textarea {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
-    transition: border 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    border-color: #6e8efb;
+    border-color: #ff416c;
+    box-shadow: 0 0 5px rgba(255, 65, 108, 0.5);
     outline: none;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
 button {
-    background: #6e8efb;
+    background: #e48399;
     color: white;
     border: none;
     padding: 10px;
@@ -59,8 +75,18 @@ button {
     font-size: 1.1em;
     cursor: pointer;
     transition: background 0.3s ease;
+    flex: 1;
+    margin: 0 5px;
 }
 
 button:hover {
-    background: #576bd3;
+    background: #ab5376;
+}
+
+#clearButton {
+    background: #6fcff2;
+}
+
+#clearButton:hover {
+    background: #388a97;
 }
